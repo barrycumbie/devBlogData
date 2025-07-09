@@ -1,0 +1,45 @@
+{
+  "devBlogEntries": [
+    {
+      "id": 1,
+      "title": "JS Fetch API ",
+      "author": "Barry",
+      "publishDate": "2025-07-05",
+      "category": "JS",
+      "tags": ["JS", "API", "fetch", "promise", "async", "data object"],
+      "content": "The Fetch API is a modern JavaScript interface for making HTTP requests. It provides a more powerful and flexible way to interact with servers compared to the older XMLHttpRequest.\n\nFetch returns a Promise, making it perfect for async/await syntax. Here's a basic example:\n\n```javascript\nfetch('https://api.example.com/data')\n  .then(response => response.json())\n  .then(data => console.log(data))\n  .catch(error => console.error('Error:', error));\n```\n\nThe Fetch API supports various HTTP methods, headers, and request configurations, making it an essential tool for modern web development."
+    },
+    {
+      "id": 2,
+      "title": "JavaScript Performance: Optimizing Your Code for Better User Experience",
+      "author": "Barry",
+      "publishDate": "2025-07-02",
+      "category": "JavaScript",
+      "tags": ["javascript", "performance", "optimization", "user-experience", "best-practices"],
+      "content": "JavaScript performance directly impacts user experience. Slow-loading scripts can frustrate users and hurt your site's conversion rates. Here are some proven strategies to optimize your JavaScript:\n\n1. **Code Splitting**: Break your JavaScript into smaller chunks that load only when needed. This reduces initial bundle size and improves page load times.\n\n2. **Lazy Loading**: Defer loading of non-critical JavaScript until it's actually needed. This is especially effective for large libraries or features that aren't immediately visible.\n\n3. **Minimize DOM Manipulation**: Batch DOM updates and use document fragments to reduce reflows and repaints.\n\n4. **Debounce and Throttle**: Use these techniques for event handlers that fire frequently, like scroll or resize events.\n\nRemember, performance optimization is an ongoing process. Regular monitoring and testing are essential to maintain optimal performance."
+    },
+    {
+      "id": 3,
+      "title": "Building Accessible Web Applications: A Developer's Guide",
+      "author": "Barry",
+      "publishDate": "2025-06-28",
+      "category": "Accessibility",
+      "tags": ["accessibility", "a11y", "web-standards", "inclusive-design", "wcag"],
+      "content": "Accessibility in web development is crucial for creating inclusive digital experiences. When we build accessible applications, we're not just helping users with disabilities - we're improving usability for everyone.\n\n**Semantic HTML is Your Foundation**\nUsing proper HTML elements provides built-in accessibility features. Instead of `<div onclick='...'>`, use `<button>`. Screen readers understand semantic elements and can navigate them effectively.\n\n**Color and Contrast Matter**\nEnsure sufficient color contrast (4.5:1 for normal text, 3:1 for large text). Never rely solely on color to convey information - use icons, text, or patterns as additional indicators.\n\n**Keyboard Navigation**\nEvery interactive element should be reachable and usable via keyboard. Test your application using only the Tab, Enter, and Arrow keys.\n\n**ARIA Labels and Descriptions**\nUse ARIA attributes to provide context where HTML semantics fall short, but remember: the first rule of ARIA is don't use ARIA if you can avoid it.\n\nAccessibility testing should be part of your development workflow, not an afterthought."
+    },
+    {
+      "id": 4,
+      "title": "React Hooks Deep Dive: useEffect Best Practices",
+      "author": "Barry",
+      "publishDate": "2025-06-25",
+      "category": "React",
+      "tags": ["react", "hooks", "useeffect", "side-effects", "react-patterns"],
+      "content": "The useEffect hook is one of React's most powerful features, but it's also one of the most misunderstood. Let's explore some advanced patterns and best practices.\n\n**Dependency Arrays: The Key to Performance**\nAlways include all dependencies in your useEffect dependency array. ESLint's exhaustive-deps rule is your friend here. Missing dependencies can lead to stale closures and bugs.\n\n**Custom Hooks for Reusability**\nExtract complex useEffect logic into custom hooks. This promotes reusability and makes your components cleaner:\n\n```javascript\nfunction useApiData(url) {\n  const [data, setData] = useState(null);\n  const [loading, setLoading] = useState(true);\n  \n  useEffect(() => {\n    fetchData(url).then(setData).finally(() => setLoading(false));\n  }, [url]);\n  \n  return { data, loading };\n}\n```\n\n**Cleanup Functions Prevent Memory Leaks**\nAlways clean up subscriptions, timeouts, and event listeners in your useEffect cleanup function.\n\n**Separating Concerns**\nUse multiple useEffect hooks for different concerns rather than cramming everything into one effect. This makes your code more readable and maintainable."
+    }
+  ],
+  "metadata": {
+    "totalEntries": 4,
+    "lastUpdated": "2025-07-09",
+    "version": "1.0"
+  }
+}
